@@ -32,8 +32,16 @@ jobs:
           name: Install 
           command: npm install 
       - run:
-          name: Release on GitHub
-          command: npx semantic-release@16 --branches main
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Test 
+          command: npm run test
+      # - run:
+      # # You need to provide GH_TOKEN & NPM_TOKEN in CircleCI environment settings 
+      # # see: https://www.npmjs.com/package/semantic-release-cli
+      #     name: Release on GitHub
+      #     command: npx semantic-release@16 --branches main
 
 workflows:
   version: 2
@@ -51,7 +59,6 @@ workflows:
 
       - release:
           name: Release
-          context: nodejs-lib-release
           filters:
             branches:
               only:
