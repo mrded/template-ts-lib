@@ -9,4 +9,4 @@ A template for TypeScript libraries
 ## Features
 - TypeScript support
 - Unit testing with [Jest](http://jestjs.io)
-- CircleCI integration
+- GitHub Actions integration
